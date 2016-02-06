@@ -44,6 +44,7 @@ class TableViewController: UITableViewController {
             post.postString = textField.text!
             self.postCollection.addPostCollection(post)
             self.tableView.reloadData()
+            textField.text = ""
         }
     }
     @IBAction func pushSearchButton(sender: UIBarButtonItem) {
