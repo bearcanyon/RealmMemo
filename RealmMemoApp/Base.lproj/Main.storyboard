@@ -30,20 +30,15 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Ukw-Ob-v8d">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="検索" id="fS7-Ex-DdT">
-                            <connections>
-                                <action selector="pushSearchButton:" destination="PYx-wK-c3q" id="kxg-yT-Bjp"/>
-                            </connections>
-                        </barButtonItem>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メモしてください" textAlignment="natural" minimumFontSize="17" id="roF-4o-2JB">
-                            <rect key="frame" x="59.5" y="7" width="256" height="30"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="一言メモしてください" textAlignment="natural" minimumFontSize="17" id="roF-4o-2JB">
+                            <rect key="frame" x="8" y="7" width="316" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         </textField>
-                        <barButtonItem key="rightBarButtonItem" title="メモ" id="cR5-qp-5pS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="fS7-Ex-DdT">
                             <connections>
-                                <action selector="pushPostButton:" destination="PYx-wK-c3q" id="DvS-4k-ERu"/>
+                                <action selector="pushSearchButton:" destination="PYx-wK-c3q" id="kxg-yT-Bjp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class TableViewController: UITableViewController{
+class TableViewController: UITableViewController,UITextFieldDelegate{
 
     @IBOutlet weak var textField: UITextField!
     let postCollection = PostCollection.sharedInstance
@@ -19,9 +19,13 @@ class TableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        textField.becomeFirstResponder()
+        textField.delegate = self
         makeTap()
         postCollection.fetchPosts()
+
+//        let realm = try!Realm()
+//        print(realm.path)//シュミレーターの場合、保存場所のパス
     }
 
 // MARK: - Table view data source
@@ -40,7 +44,8 @@ class TableViewController: UITableViewController{
         return cell
     }
     
-    @IBAction func pushPostButton(sender: UIBarButtonItem) {
+//MARK: -Action
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         if textField.text!.isEmpty {
             print("テキスト空")
@@ -51,6 +56,7 @@ class TableViewController: UITableViewController{
             self.tableView.reloadData()
             textField.text = ""
         }
+        return true
     }
     
     func makeTap(){
@@ -61,11 +67,12 @@ class TableViewController: UITableViewController{
         textField.resignFirstResponder()
     }
     
-//MARK: -MakeView
     @IBAction func pushSearchButton(sender: UIBarButtonItem) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         makeSearchView()
     }
+    
+//MARK: -Make
     func makeSearchView() {
 
         backgroundView.frame = self.view.bounds
@@ -94,6 +101,8 @@ class TableViewController: UITableViewController{
         modal.addSubview(modalTextField)
         modal.addSubview(searchButton)
         modal.addSubview(CancelButton)
+        textField.becomeFirstResponder()
+
     }
     func search() {
         if modalTextField.text!.isEmpty {
@@ -105,6 +114,8 @@ class TableViewController: UITableViewController{
             self.navigationController?.setNavigationBarHidden(false, animated: false)
         }
     }
+    
+//MARK: -Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let navigationController = segue.destinationViewController as! UINavigationController
         let correntViewController = navigationController.topViewController as! SearchTableViewController
