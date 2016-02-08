@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F4828931C65C364007FB4FB /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4828921C65C364007FB4FB /* SearchTableViewController.swift */; };
 		5F82CEDA1C64399E00D23209 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F82CED91C64399E00D23209 /* AppDelegate.swift */; };
 		5F82CEDF1C64399E00D23209 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F82CEDD1C64399E00D23209 /* Main.storyboard */; };
 		5F82CEE11C64399E00D23209 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F82CEE01C64399E00D23209 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F4828921C65C364007FB4FB /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		5F82CED61C64399E00D23209 /* RealmMemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmMemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F82CED91C64399E00D23209 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F82CEDE1C64399E00D23209 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,11 +111,11 @@
 		5F82CED81C64399E00D23209 /* RealmMemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				5FD45E911C6829AD003FB6D3 /* Model */,
+				5FD45E901C6829A6003FB6D3 /* View */,
+				5FD45E8F1C68299D003FB6D3 /* Controller */,
 				5F82CED91C64399E00D23209 /* AppDelegate.swift */,
 				5F82CEDD1C64399E00D23209 /* Main.storyboard */,
-				5F82CF0C1C643DCB00D23209 /* TableViewController.swift */,
-				5F82CF0E1C643F1500D23209 /* Post.swift */,
-				5F82CF101C648F5C00D23209 /* PostCollection.swift */,
 				5F82CEE01C64399E00D23209 /* Assets.xcassets */,
 				5F82CEE21C64399E00D23209 /* LaunchScreen.storyboard */,
 				5F82CEE51C64399E00D23209 /* Info.plist */,
@@ -137,6 +139,31 @@
 				5F82CEFB1C64399E00D23209 /* Info.plist */,
 			);
 			path = RealmMemoAppUITests;
+			sourceTree = "<group>";
+		};
+		5FD45E8F1C68299D003FB6D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5F82CF0C1C643DCB00D23209 /* TableViewController.swift */,
+				5F4828921C65C364007FB4FB /* SearchTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		5FD45E901C6829A6003FB6D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5FD45E911C6829AD003FB6D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F82CF0E1C643F1500D23209 /* Post.swift */,
+				5F82CF101C648F5C00D23209 /* PostCollection.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +318,7 @@
 			files = (
 				5F82CF0F1C643F1500D23209 /* Post.swift in Sources */,
 				5F82CF111C648F5C00D23209 /* PostCollection.swift in Sources */,
+				5F4828931C65C364007FB4FB /* SearchTableViewController.swift in Sources */,
 				5F82CEDA1C64399E00D23209 /* AppDelegate.swift in Sources */,
 				5F82CF0D1C643DCB00D23209 /* TableViewController.swift in Sources */,
 			);

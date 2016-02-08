@@ -35,7 +35,7 @@
                                 <action selector="pushSearchButton:" destination="PYx-wK-c3q" id="kxg-yT-Bjp"/>
                             </connections>
                         </barButtonItem>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="roF-4o-2JB">
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メモしてください" textAlignment="natural" minimumFontSize="17" id="roF-4o-2JB">
                             <rect key="frame" x="59.5" y="7" width="256" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -50,11 +50,48 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="textField" destination="roF-4o-2JB" id="Q3v-8M-kMT"/>
+                        <segue destination="gqe-me-5Nr" kind="presentation" identifier="SearchViewModalSegue" id="zne-gd-g8U"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMe-V3-4bP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1838.5" y="442.5"/>
+        </scene>
+        <!--Search Table View Controller-->
+        <scene sceneID="JOE-cO-p65">
+            <objects>
+                <tableViewController id="XVE-vM-5Uy" customClass="SearchTableViewController" customModule="RealmMemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XfD-xN-3EU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="cZS-Qa-qwh">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cZS-Qa-qwh" id="kZo-oG-fnU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XVE-vM-5Uy" id="Mil-vI-lKk"/>
+                            <outlet property="delegate" destination="XVE-vM-5Uy" id="rpR-VU-3o0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="dIA-Wd-cjN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="noA-Qo-evd">
+                            <connections>
+                                <action selector="pushStopButton:" destination="XVE-vM-5Uy" id="zCb-o4-BEC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hMP-eu-Qcf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2952.5" y="442.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nGO-KV-hvM">
@@ -74,6 +111,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVs-I4-VrY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1331.5" y="442.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Uos-7c-n3F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gqe-me-5Nr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dOh-n7-87J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XVE-vM-5Uy" kind="relationship" relationship="rootViewController" id="7XB-rm-ATc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vur-Mk-LwP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2365.5" y="442.5"/>
         </scene>
     </scenes>
 </document>

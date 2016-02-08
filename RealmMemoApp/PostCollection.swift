@@ -14,6 +14,7 @@ class PostCollection: NSObject {
     static let sharedInstance = PostCollection()
     var post:Post?
     var posts:[Post] = []
+    var resultsArray:[Post] = []
     
     func addPostCollection(post: Post){
         self.post = post
@@ -36,10 +37,21 @@ class PostCollection: NSObject {
             self.posts.append(convertPost)
         }
     }
-    
     class func convertPostModel(attributes: Post) -> Post {
         let post = Post()
         post.postString = attributes["postString"] as! String
         return post
     }
+    
+    func searchPosts(searchText:String) {
+        let realm = try!Realm()
+        let results = realm.objects(Post).filter("postString CONTAINS '\(searchText)'")
+        for result in results {
+            let post = Post()
+            post.postString = result["postString"] as! String
+            resultsArray.append(post)
+        }
+    }
+    
+    
 }
